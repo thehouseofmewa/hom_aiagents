@@ -1,0 +1,13 @@
+# Exclude files that don't need to be in the Docker image
+.git
+.venv
+__pycache__
+*.pyc
+*.pyo
+.pytest_cache
+.mypy_cache
+.ruff_cache
+.env
+*.md
+Makefile
+requirements-dev*

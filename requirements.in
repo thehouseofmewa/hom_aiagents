@@ -1,0 +1,25 @@
+# Direct dependencies for the HOM voice bot backend (Pipecat)
+# Compile this file into requirements.txt with:
+#   pip-compile requirements.in --output-file requirements.txt
+# or install directly with:
+#   pip install -r requirements.in
+
+# --- Pipecat (real-time voice agent framework) ---
+pipecat-ai[all]>=0.0.63
+
+# --- Web server / API ---
+fastapi>=0.115.0
+uvicorn[standard]>=0.32.0
+pydantic>=2.9.0
+pydantic-settings>=2.6.0
+
+# --- Data handling ---
+pandas>=2.2.0
+
+# --- Streaming / utilities ---
+httpx>=0.27.0
+websockets>=13.0
+python-multipart>=0.0.12
+
+# --- Observability (dev) ---
+python-dotenv>=1.0.0
