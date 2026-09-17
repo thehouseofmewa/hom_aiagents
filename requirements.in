@@ -5,7 +5,7 @@
 #   pip install -r requirements.in
 
 # --- Pipecat (real-time voice agent framework) ---
-pipecat-ai[all]>=0.0.63
+pipecat-ai[all,websocket]>=0.0.63
 
 # --- Web server / API ---
 fastapi>=0.115.0
@@ -23,3 +23,5 @@ python-multipart>=0.0.12
 
 # --- Observability (dev) ---
 python-dotenv>=1.0.0
+pipecat-ai[deepgram]
+pipecat-ai[google]

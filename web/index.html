@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#101b1b" />
+    <title>HOM Voice Lab</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <a class="wordmark" href="/" aria-label="HOM Voice Lab home"><span>HOM</span> / VOICE LAB</a>
+        <div class="header-meta"><span class="pulse-dot"></span><span id="headerState">READY TO TEST</span></div>
+      </header>
+
+      <section class="intro">
+        <p class="eyebrow">PIPECAT CLIENT / WEBSOCKET AUDIO</p>
+        <h1>Have a conversation<br /><em>with the build.</em></h1>
+        <p class="lede">A direct line into your voice agent. Start a room, grant microphone access, and listen for the first response.</p>
+      </section>
+
+      <section class="workspace" aria-label="Voice bot test console">
+        <div class="console-panel">
+          <div class="panel-heading">
+            <div><span class="section-index">01</span><h2>Session console</h2></div>
+            <span class="state-badge" id="stateBadge">IDLE</span>
+          </div>
+          <div class="orb-wrap">
+            <div class="orb"><div class="orb-core"></div><div class="orb-ring ring-one"></div><div class="orb-ring ring-two"></div></div>
+            <p class="activity" id="activity">Start a session to open the line</p>
+          </div>
+          <div class="controls">
+            <button class="primary-button" id="startButton"><span class="button-icon">↗</span><span>Start session</span></button>
+            <button class="icon-button" id="muteButton" aria-label="Mute microphone" title="Mute microphone" disabled><span>◉</span></button>
+            <button class="icon-button end-button" id="endButton" aria-label="End session" title="End session" disabled><span>■</span></button>
+          </div>
+          <p class="hint" id="hint">Your browser will ask for microphone permission when the session starts.</p>
+        </div>
+
+        <aside class="transcript-panel">
+          <div class="panel-heading"><div><span class="section-index">02</span><h2>Live signal</h2></div><span class="live-label" id="liveLabel">OFFLINE</span></div>
+          <div class="transcript" id="transcript"><div class="empty-state"><span class="empty-mark">∿</span><p>Your conversation will appear here.</p></div></div>
+          <div class="connection-row"><span>TRANSPORT</span><strong id="transportState">DISCONNECTED</strong></div>
+          <div class="connection-row"><span>ROOM</span><strong id="roomState">NOT CREATED</strong></div>
+        </aside>
+      </section>
+
+      <footer><span>HOM BACKEND</span><span>LOCAL VOICE TEST CONSOLE</span><span>V 01.0</span></footer>
+    </main>
+    <div id="audioTracks" class="audio-tracks" aria-hidden="true"></div>
+    <script type="importmap">
+      {"imports":{"@pipecat-ai/client-js":"https://esm.sh/@pipecat-ai/client-js@latest","@pipecat-ai/websocket-transport":"https://esm.sh/@pipecat-ai/websocket-transport@latest"}}
+    </script>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
